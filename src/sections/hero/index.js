@@ -37,7 +37,7 @@ class Hero extends React.Component {
                 }}
               />
               <button className="hover-button"
-                onclick="window.location.href = 'https://uc4a6b23afad702ecddef5180f47.dl.dropboxusercontent.com/cd/0/get/A3AePDzy0nbINGbL2GPrdXb8r4ZQZjRO_k0pn22WMW-lfdaRZbCJcQ3kS1q8tEOmnm7jn0DoVFYgTOihRk3VUph1AxVQcKHGySBCaMQtXXLId6mMPIQFx0ymuQYZhDVlzrw/file?_download_id=7370589168325361810814142391090869289562216683393330683911696646&_notify_domain=www.dropbox.com&dl=1'">
+                onclick="window.location.href = 'https://we.tl/t-kqkulJWhy0'">
                 <span>
                   Download CV
                 </span>
