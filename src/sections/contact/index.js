@@ -44,7 +44,7 @@ class Contact extends React.Component {
                   callMethodTime={1100} />
               </h2>
           </Col>
-          <Col className="details">
+          <Col md={10} className="details">
           <AnimationContainer delay={0} animation="fadeInUp fast">
           <div className="content-text">
             <div className="line-text">
@@ -53,7 +53,8 @@ class Contact extends React.Component {
             <div className="details_info">
             <p id="name">{this.state.name}</p>
             <p id="phone">{this.state.phone}</p>
-            <p id="email">{this.state.email}</p>
+            <p id="email"><a href="mailto:{this.state.email}">
+             {this.state.email}</a></p>
             <p id="message">{this.state.message}</p>
             </div>
             <div className="social social_icons">
