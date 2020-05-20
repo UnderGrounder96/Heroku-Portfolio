@@ -128,8 +128,9 @@ class Portfolio extends React.Component {
                   />
                   <Tilt className="Tilt" options={{ scale: 1, max: 50 }}>
                     <div className="overlay">
-                      <span className="title">
-                        {value.content.frontmatter.title}
+                      <span className="description"
+                        onClick={() => window.open(value.content.frontmatter.homepage)}>
+                        {value.content.frontmatter.description}
                       </span>
                     </div>
                   </Tilt>
@@ -196,7 +197,7 @@ export default props => (
           filter: { fileAbsolutePath: { regex: "/(portfolio)/" } }
           sort: { fields: [frontmatter___id], order: ASC }
           # The layout is built for 6 portfolio items #
-          limit: 6
+          limit: 5
         ) {
           edges {
             content: node {
@@ -205,6 +206,8 @@ export default props => (
                 id
                 title
                 category
+                description
+                homepage
                 image {
                   childImageSharp {
                     fluid(maxWidth: 2000, maxHeight: 2000) {
