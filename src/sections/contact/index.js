@@ -53,8 +53,8 @@ class Contact extends React.Component {
             <div className="details_info">
             <p id="name">{this.state.name}</p>
             <p id="phone">{this.state.phone}</p>
-            <a id="email" href="mailto:{this.state.email}">
-             {this.state.email}</a>
+            <p id="email"><a href="mailto:{this.state.email}">
+             {this.state.email}</a></p>
             <p id="message">{this.state.message}</p>
             </div>
             <div className="social social_icons">
