@@ -97,6 +97,7 @@ class Portfolio extends React.Component {
             return (
               <div
                 className="portfolio_item"
+                onClick={() => window.open(value.content.frontmatter.homepage)}
                 style={{
                   width:
                     this.context.height === "auto"
