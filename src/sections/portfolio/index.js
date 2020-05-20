@@ -129,7 +129,8 @@ class Portfolio extends React.Component {
                   />
                   <Tilt className="Tilt" options={{ scale: 1, max: 50 }}>
                     <div className="overlay">
-                      <span className="description">
+                      <span className="description"
+                        onClick={() => window.open(value.content.frontmatter.homepage)}>
                         {value.content.frontmatter.description}
                       </span>
                     </div>
