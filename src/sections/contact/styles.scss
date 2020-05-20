@@ -3,7 +3,7 @@
     @media (max-width:991px) {
         margin-top: 40px;
     }
-    
+
     .row {
         display: flex;
         flex-wrap: inherit;
@@ -53,7 +53,7 @@
             }
         }
 
-        .form {
+        .details {
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -62,41 +62,36 @@
             @media (max-width: 767px) {
                 padding: 30px 50px 50px 50px;
             }
+            .details_info {
+              color: #fff;
+              font-weight: 500;
+              margin-bottom: 2%;
+            }
 
-            .form-container {
-                margin-top: 20px;
-                input,textarea {
-                    overflow: visible;
-                    height: 50px;
-                    width: 100%;
-                    background-color: #000;
-                    border: none;
-                    border-bottom: 1px solid #555;
-                    transition: .2s;
-                    color: #fff;
-                    &:focus {
-                        border-bottom: 1px solid #eb83f8;
-                        outline: none;
-                    }
-                    &.error {
-                        border-bottom: 1px solid red;
-                    }
+            #name {
+              font-size: 50px;
+            }
+
+            #phone {
+              font-size: 45px;
+            }
+
+            #email {
+              font-size: 35px;
+            }
+
+            .social_icons {
+              .social_icon {
+                font-size: 40px;
+                color: #fff;
+                margin-right: 10px;
+                transition: 0.2s;
+                cursor: pointer;
+                &:hover {
+                  color: #eb83f8;
                 }
+              }
             }
         }
-
-        .map {
-            padding: 0;
-            iframe {
-                border: none;
-            }
-            @media (max-width: 991px) {
-                margin-top: 50px;
-            }
-        }
-    }
-
-    .submit {
-        margin-top: 40px;
     }
 }

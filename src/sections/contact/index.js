@@ -3,133 +3,87 @@ import { Row, Col } from "react-bootstrap";
 import AnimationContainer from "components/animation-container";
 import BaffleText from "components/baffle-text";
 import ThemeContext from "../../context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithubSquare,
+  faLinkedin,
+  faTwitterSquare
+} from "@fortawesome/free-brands-svg-icons";
 
 import "./styles.scss";
 
 class Contact extends React.Component {
-    static contextType = ThemeContext
+  static contextType = ThemeContext
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            name: "",
-            email: "",
-            phone: "",
-            message: "",
-            error: false,
-            show: false
-        }
-        this.show = this.show.bind(this)
+  constructor(props) {
+    super(props)
+    this.state = {
+        name: "Lucio Afonso",
+        email: "lucioafonso@icloud.com",
+        phone: "+48 739 666 646",
+        message: "I'm always open for contact. Feel free to ask about past work, future opportunities or just chatting.",
+        show: false
     }
+    this.show = this.show.bind(this)
+  }
 
-    show() {
-      this.setState({show : true})
-    }
+  show() {
+    this.setState({show : true})
+  }
 
-    check(val) {
-        if (this.state.error && val === "")
-            return false
-        else
-            return true
-    }
+  render() {
+    return (
+      <section id={`${this.props.id}`} className="contact"
+        style={{height: this.context.height}}>
+        <Row>
+          <Col md={2} className="side">
+              <h2>
+                <BaffleText text="Contact"
+                  revealDuration={500} revealDelay={500}
+                  parentMethod={this.show}
+                  callMethodTime={1100} />
+              </h2>
+          </Col>
+          <Col className="details">
+          <AnimationContainer delay={0} animation="fadeInUp fast">
+          <div className="content-text">
+            <div className="line-text">
+              <h4>Contact me</h4>
+            </div>
+            <div className="details_info">
+            <p id="name">{this.state.name}</p>
+            <p id="phone">{this.state.phone}</p>
+            <p id="email">{this.state.email}</p>
+            <p id="message">{this.state.message}</p>
+            </div>
+            <div className="social social_icons">
+              <FontAwesomeIcon
+                icon={faGithubSquare}
+                className="social_icon"
+                onClick={() =>
+                  window.open("https://www.github.com/undergrounder96")}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="social_icon"
+                onClick={() =>
+                  window.open("https://www.linkedin.com/in/lucioafonso96")}
+              />
+              <FontAwesomeIcon
+                icon={faTwitterSquare}
+                className="social_icon"
+                onClick={() =>
+                  window.open("https://www.twitter.com/undergrounder96")}
+              />
+              </div>
+            </div>
+          </AnimationContainer>
 
-    submit() {
-        if (this.state.name === "" || this.state.email === ""
-            || this.state.message === "")
-            this.setState({error: true})
-        else
-            this.setState({error: false})
-    }
-
-    render() {
-        return (
-            <section id={`${this.props.id}`} className="contact"
-                style={{height: this.context.height}}>
-                <Row>
-                    <Col md={2} className="side">
-                        <h2>
-                            <BaffleText text="Contact"
-                                revealDuration={500} revealDelay={500}
-                                parentMethod={this.show}
-                                callMethodTime={1100} />
-                        </h2>
-                    </Col>
-                    <Col md={5} className="form">
-                        {this.form()}
-                    </Col>
-                    <Col md={5} className="map">
-                        {this.map()}
-                    </Col>
-                </Row>
-            </section>
-        )
-    }
-
-    form() {
-        if (this.state.show || this.context.height === "auto") {
-            return (
-                <AnimationContainer delay={0} animation="fadeInUp fast">
-                <div className="form-container">
-                    <div className="line-text">
-                        <h4>Get In Touch</h4>
-                        <AnimationContainer delay={50} animation="fadeInUp fast">
-                            <div className="form-group">
-                                <input type="text"
-                                    className={`name ${this.check(this.state.name) ? "" : "error"}`}
-                                    placeholder="Name"
-                                    onChange={e => this.setState({name: e.target.value})} />
-                            </div>
-                        </AnimationContainer>
-                        <AnimationContainer delay={100} animation="fadeInUp fast">
-                        <div className="form-group">
-                            <input type="text"
-                                className={`email ${this.check(this.state.email) ? "" : "error"}`}
-                                placeholder="Email"
-                                onChange={e => this.setState({email: e.target.value})} />
-                        </div>
-                        </AnimationContainer>
-                        <AnimationContainer delay={150} animation="fadeInUp fast">
-                            <div className="form-group">
-                                <input type="text"
-                                    className="phone" placeholder="Phone"
-                                    onChange={e => this.setState({phone: e.target.value})} />
-                            </div>
-                        </AnimationContainer>
-                        <AnimationContainer delay={200} animation="fadeInUp fast">
-                        <div className="form-group">
-                            <textarea
-                                className={`message ${this.check(this.state.message) ? "" : "error"}`}
-                                placeholder="Message"
-                                onChange={e => this.setState({message: e.target.value})}>
-                            </textarea>
-                        </div>
-                        </AnimationContainer>
-                        <AnimationContainer delay={250} animation="fadeInUp fast">
-                        <div className="submit">
-                            <button
-                                className={`hover-button ${this.state.error ? "error" : ""}`}
-                                onClick={() => this.submit()}>
-                                <span>Send Message</span>
-                            </button>
-                        </div>
-                        </AnimationContainer>
-                    </div>
-                </div>
-                </AnimationContainer>
-            )
-        }
-    }
-
-    map() {
-        if (this.state.show || this.context.height === "auto")
-            return (
-                <AnimationContainer delay={1000} animation="fadeIn fast" height={this.context.height}>
-                    <iframe title="map" width="100%" height="100%"
-                        src="https://www.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1+Bobrszynskiego,+Cracow,+Poland&amp;ie=UTF8&amp;t&amp;z=12&amp;iwloc=B&amp;output=embed" />
-                </AnimationContainer>
-            )
-    }
-
+          </Col>
+        </Row>
+      </section>
+    )
+  }
 }
 
 export default Contact;

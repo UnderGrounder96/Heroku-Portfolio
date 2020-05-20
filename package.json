@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "My professional experience",
+  "version": "2.0.0",
+  "description": "My professional portfolio",
   "author": "Lucio Afonso",
   "license": "SEE LICENSE IN LICENSE",
   "main": "n/a",
@@ -69,11 +69,8 @@
   },
   "engines": {
     "node": "~12.16.3",
-    "npm" : "~6.14.4"
+    "npm": "~6.14.4"
   },
-  "browserslist": [
-    "not ie <= 8"
-  ],
   "keywords": [
     "portfolio"
   ]

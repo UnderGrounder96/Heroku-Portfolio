@@ -10,7 +10,7 @@ class Navigation extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            show: false
+          show: false
         }
         this.sections = [
             {
@@ -32,16 +32,15 @@ class Navigation extends React.Component {
     }
 
     navScroll(id, v) {
-
-        this.setState({show: false})
-        const el = document.getElementById(id)
-        scrollToElement(el, {
-            offset: 0,
-            ease: 'in-out-expo',
-            duration: 2000
-          }).on('end', () => {
-            this.props.change(v)
-        });
+      this.setState({show: false})
+      const el = document.getElementById(id)
+      scrollToElement(el, {
+        offset: 0,
+        ease: 'in-out-expo',
+        duration: 3600
+        }).on('end', () => {
+        this.props.change(v)
+      });
     }
 
     items() {

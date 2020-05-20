@@ -15,10 +15,9 @@ class Hero extends React.Component {
       <section
         id={`${this.props.id}`}
         className="hero"
-        style={{ height: this.context.height }}
-      >
+        style={{ height: this.context.height }}>
         <Row>
-          <Col md={6} className="content">
+          <Col md="7" className="content">
             <div className="content-text">
               <div className="line-text">
                 <h4>Hello, I'm</h4>
@@ -27,17 +26,20 @@ class Hero extends React.Component {
               <Typewriter
                 options={{
                   strings: [
-                    "C/C++ Developer",
-                    "Python Developer",
-                    "Backend Programmer",
-                    "Database expert",
+                    "Critical Thinker",
+                    "Database Expert",
+                    "Fullstack Developer",
+                    "Problem Solver",
+                    "Software Tester",
+                    "Team Player"
                   ],
                   autoStart: true,
                   loop: true
                 }}
               />
               <button className="hover-button"
-                onclick="window.location.href = 'https://we.tl/t-kqkulJWhy0'">
+                onClick={() =>
+                  window.open("https://bit.ly/2AHbbtn")}>
                 <span>
                   Download CV
                 </span>
@@ -45,7 +47,7 @@ class Hero extends React.Component {
             </div>
             {this.icons()}
           </Col>
-          <Col md={6} className="img">
+          <Col className="img">
             <img
               src={this.props.mainImg.childImageSharp.fluid.src}
               alt="person"
