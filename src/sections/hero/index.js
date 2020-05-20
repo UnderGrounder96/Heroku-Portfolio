@@ -15,10 +15,9 @@ class Hero extends React.Component {
       <section
         id={`${this.props.id}`}
         className="hero"
-        style={{ height: this.context.height }}
-      >
+        style={{ height: this.context.height }}>
         <Row>
-          <Col md={6} className="content">
+          <Col md="7" className="content">
             <div className="content-text">
               <div className="line-text">
                 <h4>Hello, I'm</h4>
@@ -27,17 +26,20 @@ class Hero extends React.Component {
               <Typewriter
                 options={{
                   strings: [
-                    "C/C++ Developer",
-                    "Python Developer",
-                    "Backend Programmer",
-                    "Database expert",
+                    "Critical Thinker",
+                    "Database Expert",
+                    "Fullstack Developer",
+                    "Problem Solver",
+                    "Software Tester",
+                    "Team Player"
                   ],
                   autoStart: true,
                   loop: true
                 }}
               />
               <button className="hover-button"
-                onclick="window.location.href = 'https://uc4a6b23afad702ecddef5180f47.dl.dropboxusercontent.com/cd/0/get/A3AePDzy0nbINGbL2GPrdXb8r4ZQZjRO_k0pn22WMW-lfdaRZbCJcQ3kS1q8tEOmnm7jn0DoVFYgTOihRk3VUph1AxVQcKHGySBCaMQtXXLId6mMPIQFx0ymuQYZhDVlzrw/file?_download_id=7370589168325361810814142391090869289562216683393330683911696646&_notify_domain=www.dropbox.com&dl=1'">
+                onClick={() =>
+                  window.open("https://bit.ly/2AHbbtn")}>
                 <span>
                   Download CV
                 </span>
@@ -45,7 +47,7 @@ class Hero extends React.Component {
             </div>
             {this.icons()}
           </Col>
-          <Col md={6} className="img">
+          <Col className="img">
             <img
               src={this.props.mainImg.childImageSharp.fluid.src}
               alt="person"

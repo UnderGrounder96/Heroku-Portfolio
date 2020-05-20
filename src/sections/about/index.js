@@ -4,10 +4,9 @@ import Progress from "components/progress";
 import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faGithub,
+  faGithubSquare,
   faLinkedin,
-  faTwitter,
-  faYoutube
+  faTwitterSquare
 } from "@fortawesome/free-brands-svg-icons";
 import ThemeContext from "../../context";
 
@@ -43,12 +42,12 @@ class Hero extends React.Component {
                 structure and Algorithms). I am a very responsible person and
                 involved in projects entrusted to me. I am characterized by high
                 interpersonal and communication skills, willingness to learn new
-                technologies, and easily acquire knowledge; in addition, I have
+                technologies, and easily acquire knowledge; additionally, I have
                 the ability to work in a team, also as a leader.
               </p>
               <div className="social social_icons">
                 <FontAwesomeIcon
-                  icon={faGithub}
+                  icon={faGithubSquare}
                   className="social_icon"
                   onClick={() =>
                     window.open("https://www.github.com/undergrounder96")}
@@ -60,18 +59,10 @@ class Hero extends React.Component {
                     window.open("https://www.linkedin.com/in/lucioafonso96")}
                 />
                 <FontAwesomeIcon
-                  icon={faTwitter}
+                  icon={faTwitterSquare}
                   className="social_icon"
                   onClick={() =>
                     window.open("https://www.twitter.com/undergrounder96")}
-                />
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  className="social_icon"
-                  onClick={() =>
-                    window.open(
-                      "https://www.youtube.com/channel/UCt-c27v9T5BXxXyXDRUYltQ"
-                      )}
                 />
               </div>
             </div>
@@ -90,7 +81,16 @@ class Hero extends React.Component {
               <Progress name="Git" value={80} delay={1100} />
               <Progress name="Bash" value={80} delay={1100} />
               <Progress name="Linux" value={80} delay={1100} />
-
+              {/*
+              <Progress name="XML" value={80} delay={1100} />
+              <Progress name="Jenkins" value={75} delay={1100} />
+              <Progress name="SVN" value={75} delay={1100} />
+              <Progress name="CorelDraw" value={70} delay={1100} />
+              <Progress name="Gerrit" value={70} delay={1100} />
+              <Progress name="Jira" value={65} delay={1100} />
+              <Progress name="ReatcJS" value={60} delay={1100} />
+              <Progress name="CakePHP" value={45} delay={1100} />
+              */}
             </div>
           </Col>
         </Row>
@@ -127,14 +127,3 @@ class Hero extends React.Component {
 }
 
 export default Hero;
-
-/*
-              <Progress name="XML" value={80} delay={1100} />
-              <Progress name="Jenkins" value={75} delay={1100} />
-              <Progress name="SVN" value={75} delay={1100} />
-              <Progress name="CorelDraw" value={70} delay={1100} />
-              <Progress name="Gerrit" value={70} delay={1100} />
-              <Progress name="Jira" value={65} delay={1100} />
-              <Progress name="ReatcJS" value={60} delay={1100} />
-              <Progress name="CakePHP" value={45} delay={1100} />
-*/
