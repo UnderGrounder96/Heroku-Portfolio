@@ -44,7 +44,7 @@ class Contact extends React.Component {
                   callMethodTime={1100} />
               </h2>
           </Col>
-          <Col className="details">
+          <Col md={10} className="details">
           <AnimationContainer delay={0} animation="fadeInUp fast">
           <div className="content-text">
             <div className="line-text">
