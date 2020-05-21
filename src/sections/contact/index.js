@@ -54,7 +54,7 @@ class Contact extends React.Component {
             <p id="name">{this.state.name}</p>
             <p id="phone">{this.state.phone}</p>
             <p id="email">
-              <a href="mailto:lucioafonso@icloud.com">
+              <a href={"mailto:"+this.state.email}>
                 {this.state.email}
               </a>
             </p>
