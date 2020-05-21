@@ -50,21 +50,48 @@ Deployment
 --------------
 Please link all npm dependencies:
 
-    ~/RentAcar> npm ln
-    [*installation warnings*]
+  ~/RentAcar> npm ln
+  [*installation warnings*]
 
-    [154 packages are looking for funding]
+  [154 packages are looking for funding]
 
 
- In order to start the NodeJS server, execute:
+In order to start the NodeJS server, execute:
 
-    ~/RentAcar> npm start
-    [...]
-    [success Building development bundle - 4.605s]
+  ~/RentAcar> npm start
+  [...]
+  [success Building development bundle - 4.605s]
 
 Then opening the (default) website on **Google Chrome**(*):
 
   localhost:8000
+
+Files
+------
+/Portfolio:
+  .gitignore - git file that helps ignoring other files
+  app.json - heroku config app file
+  gatsby-config.js - self explanatory
+  gatsby-node.js - node path WebpackConfig file
+  LICENSE - license
+  package.json - npm config file
+  package-lock.json
+  README.md - this readme
+  static.json - self explanatory
+
+/Portfolio/content:
+  content for Porfolio, Hero and Testimonials pages
+
+/Portfolio/src:
+  source code for all images, pages, content, component, scss
+
+/Portfolio/static:
+  page icon, navigation logo and robot
+
+/Portfolio/.cache:
+/Portfolio/node_modules:
+/Portfolio/public:
+	folders generated after a successufully "npm ln && npm start" run
 
 Versioning
 ------------
@@ -84,8 +111,8 @@ Acknowledgments
 ----------------------
 Official sites:
 
-	http://gatsbyjs.org/
+http://gatsbyjs.org/
 
-	http:/reactjs.org/
+http://reactjs.org/
 
-	http://nodejs.org/
+http://nodejs.org/
