@@ -111,8 +111,8 @@ Acknowledgments
 ----------------------
 Official sites:
 
-	http://gatsbyjs.org/
+http://gatsbyjs.org/
 
-  http://reactjs.org/
+http://reactjs.org/
 
-	http://nodejs.org/
+http://nodejs.org/
