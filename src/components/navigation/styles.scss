@@ -84,6 +84,7 @@
 }
 
 .opener {
+<<<<<<< HEAD
   position: fixed;
   left: 43px;
   top: 20px;
@@ -97,6 +98,22 @@
     transition: .1s;
     &:hover {
       color: #eb83f8;
+=======
+    position: fixed;
+    left: 43px;
+    top: 20px;
+    stroke-width: 10px;
+    stroke: #000;
+    z-index: 100;
+    svg {
+        color: #fff;
+        font-size: 40px;
+        cursor: pointer;
+        transition: .1s;
+        &:hover {
+            color: #eb83f8;
+        }
+>>>>>>> b2ddc64... Navigation opener stroke added and z-index corrected (#8)
     }
   }
 }
