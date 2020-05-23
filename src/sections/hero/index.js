@@ -39,9 +39,10 @@ class Hero extends React.Component {
               />
               <button className="hover-button"
                 onClick={() =>
-                  window.open("https://bit.ly/2AHbbtn")}>
+                  /*https://bit.ly/2XkMlY0*/
+                  window.open("https://bit.ly/2LT1LgS")}>
                 <span>
-                  Download CV
+                  CV Download
                 </span>
               </button>
             </div>
