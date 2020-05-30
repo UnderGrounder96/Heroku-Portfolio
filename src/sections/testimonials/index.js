@@ -1,12 +1,13 @@
 import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import Slider from "react-slick";
 import { graphql, StaticQuery } from "gatsby";
+import { Row, Col, Container } from "react-bootstrap";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import ThemeContext from "../../context";
 import BaffleText from "components/baffle-text";
 import AnimationContainer from "components/animation-container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import Slider from "react-slick";
-import ThemeContext from "../../context";
 
 import "slick-carousel/slick/slick-theme.css";
 import "./styles.scss";
@@ -84,7 +85,8 @@ class Testimonials extends React.Component {
         return (
           <Col md={2} className="client" key={index}>
             <AnimationContainer delay={100} animation="fadeIn slower">
-              <img src={value.node.childImageSharp.fluid.src} alt="client" />
+              <img src={value.node.childImageSharp.fluid.src}
+                loading="lazy" alt="client" />
             </AnimationContainer>
           </Col>
         )
@@ -132,6 +134,7 @@ class Testimonials extends React.Component {
                   src={
                     value.content.frontmatter.image.childImageSharp.fluid.src
                   }
+                  loading="lazy"
                   alt={value.content.frontmatter.name}
                 />
                 <div className="info">
