@@ -1,10 +1,11 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { Row, Col } from "react-bootstrap";
-import AnimationContainer from "components/animation-container";
-import BaffleText from "components/baffle-text";
 import Tilt from "react-tilt";
+import { Row, Col } from "react-bootstrap";
+import { StaticQuery, graphql } from "gatsby";
+
 import ThemeContext from "../../context";
+import BaffleText from "components/baffle-text";
+import AnimationContainer from "components/animation-container";
 
 import "./styles.scss";
 
@@ -38,29 +39,20 @@ class Portfolio extends React.Component {
 
   render() {
     return (
-      <section
-        id={`${this.props.id}`}
-        className="portfolio"
-        style={{ height: this.context.height }}
-      >
+      <section id={`${this.props.id}`} className="portfolio"
+        style={{ height: this.context.height }}>
         <Row>
           <Col md={2} className="side">
             <h2>
-              <BaffleText
-                text="Portfolio"
-                revealDuration={500}
-                revealDelay={500}
-                parentMethod={this.showPortfolio}
-                callMethodTime={1100}
-              />
+              <BaffleText text="Portfolio" revealDuration={500}
+                revealDelay={500} parentMethod={this.showPortfolio}
+                callMethodTime={1100}/>
             </h2>
           </Col>
           <Col md={10} className="recent-works">
             <div className="portfolio_selector">
-              <button
-                className="portfolio_category"
-                onClick={() => this.changeCategory(null)}
-              >
+              <button className="portfolio_category"
+                onClick={() => this.changeCategory(null)}>
                 <span className={`${!this.state.category ? "active" : ""}`}>
                   All
                 </span>
@@ -69,15 +61,12 @@ class Portfolio extends React.Component {
             </div>
 
             <div className="content">
-              <div
-                className="portfolio_container"
-                style={{
+              <div className="portfolio_container" style={{
                   maxHeight:
                     this.context.height !== "auto"
                       ? this.context.height * 0.8
                       : "inherit"
-                }}
-              >
+                }}>
                 {this.items()}
               </div>
             </div>
@@ -91,12 +80,11 @@ class Portfolio extends React.Component {
     if (this.state.showPortfolio || this.context.height === "auto") {
       const { items } = this.state;
       return items.map((value, index) => {
-        if (value.content.frontmatter.category === this.state.category
-          || !this.state.category) {
+        if (value.content.frontmatter.category === this.state.category ||
+          !this.state.category) {
           if (value.content.frontmatter.image) {
             return (
-              <div
-                className="portfolio_item"
+              <div className="portfolio_item"
                 onClick={() => window.open(value.content.frontmatter.homepage)}
                 style={{
                   width:
@@ -110,11 +98,10 @@ class Portfolio extends React.Component {
                       ? "50%"
                       : "100%"
                 }}
-                key={index}
-              >
+                key={index}>
                 <AnimationContainer delay={100} animation="fadeIn" key={index}>
-                  <img
-                    src={value.content.frontmatter.image.childImageSharp.fluid.src}
+                  <img src={value.content.frontmatter.image.childImageSharp.fluid.src}
+                    loading="lazy"
                     alt={value.content.frontmatter.title}
                     style={{
                       maxHeight: `${this.context.height *
@@ -125,12 +112,10 @@ class Portfolio extends React.Component {
                             ) === 4
                           ? 0.36
                           : 1)}px`
-                    }}
-                  />
+                    }}/>
                   <Tilt className="Tilt" options={{ scale: 1, max: 50 }}>
                     <div className="overlay">
-                      <span className="description"
-                        onClick={() => window.open(value.content.frontmatter.homepage)}>
+                      <span className="description">
                         {value.content.frontmatter.description}
                       </span>
                     </div>
@@ -177,10 +162,8 @@ class Portfolio extends React.Component {
     categories = [...new Set(categories)];
     return categories.map((value, index) => {
       return (
-        <button
-          className="portfolio_category"
-          onClick={() => this.changeCategory(value)}
-          key={index}>
+        <button className="portfolio_category"
+          onClick={()=>this.changeCategory(value)} key={index}>
           <span className={`${this.state.category === value ? "active" : ""}`}>
             {value}
           </span>
@@ -191,37 +174,33 @@ class Portfolio extends React.Component {
 }
 
 export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        items: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/(portfolio)/" } }
-          sort: { fields: [frontmatter___id], order: ASC }
-          # The layout is built for 6 portfolio items #
-          limit: 5
-        ) {
-          edges {
-            content: node {
-              html
-              frontmatter {
-                id
-                title
-                category
-                description
-                homepage
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 2000, maxHeight: 2000) {
-                      src
-                    }
+  <StaticQuery query={graphql` query {
+      items: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(portfolio)/" } }
+        sort: { fields: [frontmatter___id], order: ASC }
+        # The layout is built for 6 portfolio items #
+        limit: 5
+      ) {
+        edges {
+          content: node {
+            html
+            frontmatter {
+              id
+              title
+              category
+              description
+              homepage
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2000, maxHeight: 2000) {
+                    src
                   }
                 }
               }
             }
           }
         }
-      }
+      }}
     `}
-    render={({ items }) => <Portfolio items={items.edges} {...props} />}
-  />
+    render={({ items }) => <Portfolio items={items.edges} {...props} />}/>
 );

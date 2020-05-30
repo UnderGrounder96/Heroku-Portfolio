@@ -1,6 +1,5 @@
 import React from "react";
 import Particles from "react-particles-js";
-import Progress from "components/progress";
 import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,7 +7,9 @@ import {
   faLinkedin,
   faTwitterSquare
 } from "@fortawesome/free-brands-svg-icons";
+
 import ThemeContext from "../../context";
+import Progress from "components/progress";
 
 import "./styles.scss";
 
@@ -17,11 +18,8 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <section
-        id={`${this.props.id}`}
-        className="about"
-        style={{ height: this.context.height }}
-      >
+      <section id={`${this.props.id}`} className="about"
+        style={{ height: this.context.height }}>
         {this.particles()}
         <Row>
           <Col md={6} className="content">
@@ -46,24 +44,12 @@ class Hero extends React.Component {
                 the ability to work in a team, also as a leader.
               </p>
               <div className="social social_icons">
-                <FontAwesomeIcon
-                  icon={faGithubSquare}
-                  className="social_icon"
-                  onClick={() =>
-                    window.open("https://www.github.com/undergrounder96")}
-                />
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className="social_icon"
-                  onClick={() =>
-                    window.open("https://www.linkedin.com/in/lucioafonso96")}
-                />
-                <FontAwesomeIcon
-                  icon={faTwitterSquare}
-                  className="social_icon"
-                  onClick={() =>
-                    window.open("https://www.twitter.com/undergrounder96")}
-                />
+                <FontAwesomeIcon icon={faGithubSquare} className="social_icon"
+                  onClick={()=>window.open("https://bit.ly/2LRZ0wn")}/>
+                <FontAwesomeIcon icon={faLinkedin} className="social_icon"
+                  onClick={()=>window.open("https://bit.ly/2AV9b0N")}/>
+                <FontAwesomeIcon icon={faTwitterSquare} className="social_icon"
+                  onClick={()=>window.open("https://bit.ly/2XnFQ6V")}/>
               </div>
             </div>
           </Col>
@@ -81,16 +67,6 @@ class Hero extends React.Component {
               <Progress name="Git" value={80} delay={1100} />
               <Progress name="Bash" value={80} delay={1100} />
               <Progress name="Linux" value={80} delay={1100} />
-              {/*
-              <Progress name="XML" value={80} delay={1100} />
-              <Progress name="Jenkins" value={75} delay={1100} />
-              <Progress name="SVN" value={75} delay={1100} />
-              <Progress name="CorelDraw" value={70} delay={1100} />
-              <Progress name="Gerrit" value={70} delay={1100} />
-              <Progress name="Jira" value={65} delay={1100} />
-              <Progress name="ReatcJS" value={60} delay={1100} />
-              <Progress name="CakePHP" value={45} delay={1100} />
-              */}
             </div>
           </Col>
         </Row>
@@ -100,8 +76,7 @@ class Hero extends React.Component {
 
   particles() {
     return (
-      <Particles
-        className="particles"
+      <Particles className="particles"
         params={{
           particles: {
             number: {
@@ -120,8 +95,7 @@ class Hero extends React.Component {
             }
           },
           retina_detect: true
-        }}
-      />
+        }}/>
     );
   }
 }

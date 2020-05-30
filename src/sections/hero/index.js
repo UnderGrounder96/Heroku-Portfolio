@@ -1,8 +1,9 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
 import { Row, Col } from "react-bootstrap";
-import Glitch from "components/glitch";
 import Typewriter from "typewriter-effect";
+import { StaticQuery, graphql } from "gatsby";
+
+import Glitch from "components/glitch";
 import ThemeContext from "../../context";
 
 import "./styles.scss";
@@ -12,9 +13,7 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <section
-        id={`${this.props.id}`}
-        className="hero"
+      <section id={`${this.props.id}`} className="hero"
         style={{ height: this.context.height }}>
         <Row>
           <Col md="7" className="content">
@@ -23,36 +22,28 @@ class Hero extends React.Component {
                 <h4>Hello, I'm</h4>
               </div>
               <Glitch text="Lucio Afonso" />
-              <Typewriter
-                options={{
-                  strings: [
-                    "Critical Thinker",
-                    "Database Expert",
-                    "Fullstack Developer",
-                    "Problem Solver",
-                    "Software Tester",
-                    "Team Player"
-                  ],
-                  autoStart: true,
-                  loop: true
-                }}
-              />
+              <Typewriter options={{
+                strings: [
+                  "Critical Thinker",
+                  "Database Expert",
+                  "Fullstack Developer",
+                  "Problem Solver",
+                  "Software Tester",
+                  "Team Player"
+                ],
+                autoStart: true,
+                loop: true
+              }}/>
               <button className="hover-button"
-                onClick={() =>
-                  /*https://bit.ly/2XkMlY0*/
-                  window.open("https://bit.ly/2LT1LgS")}>
-                <span>
-                  CV Download
-                </span>
+                onClick={()=>window.open("https://bit.ly/3diJ7eq")}>
+                <span>CV Download</span>
               </button>
             </div>
             {this.icons()}
           </Col>
           <Col className="img">
-            <img
-              src={this.props.mainImg.childImageSharp.fluid.src}
-              alt="person"
-            />
+            <img src={this.props.mainImg.childImageSharp.fluid.src}
+              loading="lazy" alt="person"/>
           </Col>
         </Row>
       </section>
@@ -62,8 +53,7 @@ class Hero extends React.Component {
   icons() {
     return this.props.icons.edges.map((value, index) => {
       return (
-        <img
-          src={value.node.childImageSharp.fluid.src}
+        <img src={value.node.childImageSharp.fluid.src}
           className={`animated fadeIn move-${
             Math.floor(Math.random() * 10) % 2 === 0 ? "up" : "down"
           } float-image`}
@@ -74,41 +64,37 @@ class Hero extends React.Component {
               +(index % 2 === 0 ? 70 : 10)}%`
           }}
           alt="shape"
-          key={index}
-        />
+          key={index}/>
       );
     });
   }
 }
 
 export default props => (
-  <StaticQuery
-    query={graphql`
-      query {
-        icons: allFile(
-          filter: {
-            extension: { regex: "/(png)/" }
-            relativeDirectory: { eq: "icons" }
-          }
-        ) {
-          edges {
-            node {
-              childImageSharp {
-                fluid(maxWidth: 100) {
-                  src
-                }
-              }
-            }
-          }
-        }
-        Img: file(relativePath: { eq: "person.jpeg" }) {
+  <StaticQuery query={graphql` query {
+    icons: allFile(
+      filter: {
+        extension: { regex: "/(png)/" }
+        relativeDirectory: { eq: "icons" }
+      }
+    ) {
+      edges {
+        node {
           childImageSharp {
-            fluid(maxWidth: 2000) {
+            fluid(maxWidth: 100) {
               src
             }
           }
         }
       }
+    }
+    Img: file(relativePath: { eq: "person.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          src
+        }
+      }
+    }}
     `}
     render={({ icons, Img }) => <Hero icons={icons} mainImg={Img} {...props} />}
   />
