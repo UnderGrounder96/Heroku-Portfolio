@@ -6,16 +6,14 @@ class Spinner extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      spin: true,
+      spin: true
     }
   }
 
   componentDidMount() {
     const { duration } = this.props
     this.showSpinner(duration).then(() => {
-      setTimeout(() => {
-        document.getElementById('spinner').remove()
-      }, 500)
+      setTimeout(() => {document.getElementById('spinner').remove()}, 500)
     })
   }
 
@@ -31,9 +29,8 @@ class Spinner extends React.Component {
 
   render() {
     return (
-      <div
-        className={`spinner-container ${this.state.spin ? 'show' : ''}`}
-        id="spinner">
+      <div id="spinner"
+        className={`spinner-container ${this.state.spin ? 'show' : ''}`}>
         <div className="spinner">
           <div className="ring"></div>
           <div className="ring"></div>

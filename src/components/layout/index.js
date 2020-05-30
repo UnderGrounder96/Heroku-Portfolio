@@ -1,7 +1,8 @@
 import React from "react";
+import ScrollLock from "react-scrolllock";
+
 import { ThemeProvider } from "../../context";
 import Navigation from "components/navigation";
-import ScrollLock from "react-scrolllock";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "scss/retro.scss";
@@ -36,12 +37,12 @@ class Layout extends React.Component {
     }
     this.setState({ height: window.innerHeight, width: window.innerWidth })
     if (window.innerWidth < 1025) {
-      this.setState({ scrolllock: false })
+      this.setState({scrolllock: false})
       if (window.innerWidth < 992) {
-        this.setState({ mobile: true })
+        this.setState({mobile: true})
       }
     } else {
-      this.setState({ mobile: false, scrolllock: true })
+      this.setState({mobile: false, scrolllock: true})
     }
   }
 
@@ -71,13 +72,10 @@ class Layout extends React.Component {
     if (!this.scrolling && !this.state.mobile) {
       this.scrolling = true
       if (e.deltaY < 0) {
-        if (
-          this.sections[
-            (this.section_id + this.sections.length - 1) % this.sections.length
-          ] !== this.sections[this.sections.length - 1]
-        )
-          this.section_id =
-            (this.section_id + this.sections.length - 1) % this.sections.length
+        if (this.sections[(this.section_id + this.sections.length - 1)
+          % this.sections.length] !== this.sections[this.sections.length - 1])
+        this.section_id = (this.section_id + this.sections.length - 1)
+          % this.sections.length
       } else {
         if (this.section_id !== this.sections.length - 1)
           this.section_id = (this.section_id + 1) % this.sections.length
@@ -87,21 +85,18 @@ class Layout extends React.Component {
         offset: 0,
         ease: "in-out-expo",
         duration: 2000,
-      }).on("end", () => {
-        this.scrolling = false
-      })
+      }).on("end", () => {this.scrolling = false})
     }
   }
 
   render() {
     const { children } = this.props
     return (
-      <ThemeProvider
-        value={{ height: this.state.mobile ? "auto" : this.state.height }}
-      >
+      <ThemeProvider value={{
+        height: this.state.mobile ? "auto" : this.state.height }}>
         <Navigation change={this.changeSection} />
-        <div onWheel={e => this.wheel(e)}>{children}</div>
         <ScrollLock isActive={this.state.scrolllock} />
+        <div onWheel={e => this.wheel(e)}>{children}</div>
       </ThemeProvider>
     )
   }

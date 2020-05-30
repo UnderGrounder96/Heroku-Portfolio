@@ -1,6 +1,13 @@
 TODO.txt
-debug.log
+
+# Logs
+logs
+*.log
+
+# Package-lock.json
 package-lock.json
+
+# Dependency and cache directories
 .cache/
 public/
 node_modules/

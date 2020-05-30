@@ -1,98 +1,88 @@
 .contact {
-    background-color: #000;
-    @media (max-width:991px) {
-        margin-top: 40px;
+  background-color: #000;
+  @media (max-width:991px) {
+    margin-top: 40px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: inherit;
+    overflow: hidden;
+    min-height: 100%;
+    padding: 0;
+    @media (max-width:911px) {
+      display: block;
+    }
+    .side {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      background-color: #251170;
+      .baffle_text {
+        transform: rotate(-90deg);
+        text-align: center;
+        span {
+          color: #fff;
+          font-family: Poppins;
+          font-size: 60px;
+          margin: 10px 0 20px 0;
+          line-height: 60px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 10px;
+        }
+      }
+
+      @media (max-width:991px) {
+        height: 100px;
+        width: 100%;
+        .baffle_text {
+          transform: inherit;
+          span {
+            font-size: 40px;
+            line-height: 40px;
+          }
+        }
+      }
     }
 
-    .row {
-        display: flex;
-        flex-wrap: inherit;
-        overflow: hidden;
-        min-height: 100%;
-        padding: 0;
-
-        @media (max-width:911px) {
-            display: block;
+    .details {
+      display: flex;
+      margin: auto;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 5%;
+      background-color: #000;
+      @media (max-width: 767px) {
+          padding: 30px 50px 50px 50px;
+      }
+      .details_info {
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 2%;
+      }
+      #name {
+        font-size: 40px;
+      }
+      #phone {
+        font-size: 35px;
+      }
+      #email {
+        font-size: 25px;
+      }
+      .social_icons {
+        .social_icon {
+          font-size: 40px;
+          color: #fff;
+          margin-right: 10px;
+          transition: 0.2s;
+          cursor: pointer;
+          &:hover {
+            color: #eb83f8;
+          }
         }
-
-        .side {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            background-color: #251170;
-
-            .baffle_text {
-                transform: rotate(-90deg);
-                text-align: center;
-
-                span {
-                    color: #fff;
-                    font-family: Poppins;
-                    font-size: 60px;
-                    margin: 10px 0 20px 0;
-                    line-height: 60px;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 10px;
-                }
-            }
-
-            @media (max-width:991px) {
-                height: 100px;
-                width: 100%;
-
-                .baffle_text {
-                    transform: inherit;
-
-                    span {
-                        font-size: 40px;
-                        line-height: 40px;
-                    }
-                }
-            }
-        }
-
-        .details {
-            display: flex;
-            margin: auto;
-            justify-content: center;
-            flex-direction: column;
-            padding: 0 5%;
-            background-color: #000;
-            @media (max-width: 767px) {
-                padding: 30px 50px 50px 50px;
-            }
-            .details_info {
-              color: #fff;
-              font-weight: 500;
-              margin-bottom: 2%;
-            }
-
-            #name {
-              font-size: 40px;
-            }
-
-            #phone {
-              font-size: 35px;
-            }
-
-            #email {
-              font-size: 25px;
-            }
-
-            .social_icons {
-              .social_icon {
-                font-size: 40px;
-                color: #fff;
-                margin-right: 10px;
-                transition: 0.2s;
-                cursor: pointer;
-                &:hover {
-                  color: #eb83f8;
-                }
-              }
-            }
-        }
+      }
     }
+  }
 }

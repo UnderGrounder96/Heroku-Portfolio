@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Lucio Afonso",
-    description:
-      "Retro is a modern stylish one page resume template built using React and Gatsby"
+    title: "Lucio Afonso - Portfolio",
+    description: "Portfolio built using React and Gatsby"
   },
   pathPrefix: "/",
   plugins: [
