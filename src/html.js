@@ -8,7 +8,7 @@ class HTML extends React.Component {
           <meta name="viewport"
             content="width=device-width, initial-scale=1.0" />
           {this.props.headComponents}
-          <link rel="icon" href="/img/icon.ico" />
+          <link rel="shortcut icon" href="/img/icon.ico" />
         </head>
         <body style={{ padding: '0px !important' }} className="no-overflow">
           <div id="___gatsby"
