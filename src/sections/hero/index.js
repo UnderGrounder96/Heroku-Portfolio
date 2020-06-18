@@ -35,7 +35,7 @@ class Hero extends React.Component {
                 loop: true
               }}/>
               <button className="hover-button"
-                onClick={()=>window.open("https://bit.ly/2AGBKPG")}>
+                onClick={()=>window.open("https://bit.ly/2zH2tey")}>
                 <span>CV Download</span>
               </button>
             </div>
