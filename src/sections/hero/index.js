@@ -35,7 +35,7 @@ class Hero extends React.Component {
                 loop: true
               }}/>
               <button className="hover-button"
-                onClick={()=>window.open(process.env.CV_LINK)}>
+                onClick={()=>window.open(process.env.GATSBY_CV_LINK)}>
                 <span>CV Download</span>
               </button>
             </div>
