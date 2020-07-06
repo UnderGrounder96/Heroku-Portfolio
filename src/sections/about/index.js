@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithubSquare,
   faLinkedin,
-  faTwitterSquare
+  faTwitterSquare,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
 import ThemeContext from "../../context";
@@ -50,6 +51,8 @@ class Hero extends React.Component {
                   onClick={()=>window.open("https://bit.ly/2AV9b0N")}/>
                 <FontAwesomeIcon icon={faTwitterSquare} className="social_icon"
                   onClick={()=>window.open("https://bit.ly/2XnFQ6V")}/>
+                <FontAwesomeIcon icon={faInstagram} className="social_icon"
+                  onClick={()=>window.open("https://bit.ly/2BMGpAn")}/>
               </div>
             </div>
           </Col>
