@@ -19,8 +19,11 @@ class Hero extends React.Component {
 
   render() {
     return (
-      <section id={`${this.props.id}`} className="about"
-        style={{ height: this.context.height }}>
+      <section
+        id={`${this.props.id}`}
+        className="about"
+        style={{ height: this.context.height }}
+      >
         {this.particles()}
         <Row>
           <Col md={6} className="content">
@@ -45,14 +48,26 @@ class Hero extends React.Component {
                 the ability to work in a team, also as a leader.
               </p>
               <div className="social social_icons">
-                <FontAwesomeIcon icon={faGithubSquare} className="social_icon"
-                  onClick={()=>window.open("https://bit.ly/2LRZ0wn")}/>
-                <FontAwesomeIcon icon={faLinkedin} className="social_icon"
-                  onClick={()=>window.open("https://bit.ly/2AV9b0N")}/>
-                <FontAwesomeIcon icon={faTwitterSquare} className="social_icon"
-                  onClick={()=>window.open("https://bit.ly/2XnFQ6V")}/>
-                <FontAwesomeIcon icon={faInstagram} className="social_icon"
-                  onClick={()=>window.open("https://bit.ly/2BMGpAn")}/>
+                <FontAwesomeIcon
+                  icon={faGithubSquare}
+                  className="social_icon"
+                  onClick={() => window.open("https://bit.ly/2LRZ0wn")}
+                />
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="social_icon"
+                  onClick={() => window.open("https://bit.ly/2AV9b0N")}
+                />
+                <FontAwesomeIcon
+                  icon={faTwitterSquare}
+                  className="social_icon"
+                  onClick={() => window.open("https://bit.ly/2XnFQ6V")}
+                />
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="social_icon"
+                  onClick={() => window.open("https://bit.ly/2BMGpAn")}
+                />
               </div>
             </div>
           </Col>
@@ -79,26 +94,28 @@ class Hero extends React.Component {
 
   particles() {
     return (
-      <Particles className="particles"
+      <Particles
+        className="particles"
         params={{
           particles: {
             number: {
               value: 50,
               density: {
                 enable: false,
-                value_area: 5000
-              }
+                value_area: 5000,
+              },
             },
             line_linked: {
               enable: true,
-              opacity: 0.5
+              opacity: 0.5,
             },
             size: {
-              value: 1
-            }
+              value: 1,
+            },
           },
-          retina_detect: true
-        }}/>
+          retina_detect: true,
+        }}
+      />
     );
   }
 }

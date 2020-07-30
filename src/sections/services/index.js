@@ -9,7 +9,7 @@ import {
   faSmileBeam,
   faPizzaSlice,
   faQuoteRight,
-  faCode
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 
 import ThemeContext from "../../context";
@@ -23,7 +23,7 @@ class Services extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
     };
     this.show = this.show.bind(this);
   }
@@ -36,15 +36,20 @@ class Services extends React.Component {
 
   render() {
     return (
-      <section id={`${this.props.id}`} className="services"
-        style={{ height: this.context.height }}>
-        <Row className="top"
+      <section
+        id={`${this.props.id}`}
+        className="services"
+        style={{ height: this.context.height }}
+      >
+        <Row
+          className="top"
           style={{
             maxHeight:
               this.context.height !== "auto"
                 ? this.context.height * 0.8
-                : "inherit"
-          }}>
+                : "inherit",
+          }}
+        >
           <div className="content">
             <Col md={12}>
               <div className="line-text">
@@ -65,7 +70,7 @@ class Services extends React.Component {
                   minHeight:
                     this.context.height !== "auto"
                       ? this.context.height * 0.6
-                      : "inherit"
+                      : "inherit",
                 }}
               >
                 <Container>{this.services()}</Container>
@@ -183,26 +188,46 @@ class Services extends React.Component {
         <Container>
           <Col md={3}>
             <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter icon={faSmileBeam} value={10} text="Coding Friends"
-                symbol="+" duration={3} />
+              <Counter
+                icon={faSmileBeam}
+                value={10}
+                text="Coding Friends"
+                symbol="+"
+                duration={3}
+              />
             </AnimationContainer>
           </Col>
           <Col md={3}>
             <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter icon={faPizzaSlice} value={1000} text="Pizzas Ordered"
-                symbol="+" duration={3} />
+              <Counter
+                icon={faPizzaSlice}
+                value={1000}
+                text="Pizzas Ordered"
+                symbol="+"
+                duration={3}
+              />
             </AnimationContainer>
           </Col>
           <Col md={3}>
             <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter icon={faQuoteRight} value={50} text="Project ideas"
-                symbol="+" duration={3} />
+              <Counter
+                icon={faQuoteRight}
+                value={50}
+                text="Project ideas"
+                symbol="+"
+                duration={3}
+              />
             </AnimationContainer>
           </Col>
           <Col md={3}>
             <AnimationContainer delay={100} animation="fadeIn fast">
-              <Counter icon={faCode} value={50000} text="Lines of Code"
-                symbol="+" duration={3} />
+              <Counter
+                icon={faCode}
+                value={50000}
+                text="Lines of Code"
+                symbol="+"
+                duration={3}
+              />
             </AnimationContainer>
           </Col>
         </Container>

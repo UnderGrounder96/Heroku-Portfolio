@@ -1,6 +1,6 @@
 .contact {
   background-color: #000;
-  @media (max-width:991px) {
+  @media (max-width: 991px) {
     margin-top: 40px;
   }
 
@@ -10,7 +10,7 @@
     overflow: hidden;
     min-height: 100%;
     padding: 0;
-    @media (max-width:911px) {
+    @media (max-width: 911px) {
       display: block;
     }
     .side {
@@ -34,7 +34,7 @@
         }
       }
 
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         height: 100px;
         width: 100%;
         .baffle_text {
@@ -55,7 +55,7 @@
       padding: 0 5%;
       background-color: #000;
       @media (max-width: 767px) {
-          padding: 30px 50px 50px 50px;
+        padding: 30px 50px 50px 50px;
       }
       .details_info {
         color: #fff;

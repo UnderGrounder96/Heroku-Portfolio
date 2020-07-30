@@ -4,40 +4,44 @@ import "./styles.scss";
 
 class Spinner extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      spin: true
-    }
+      spin: true,
+    };
   }
 
   componentDidMount() {
-    const { duration } = this.props
+    const { duration } = this.props;
     this.showSpinner(duration).then(() => {
-      setTimeout(() => {document.getElementById('spinner').remove()}, 500)
-    })
+      setTimeout(() => {
+        document.getElementById("spinner").remove();
+      }, 500);
+    });
   }
 
   showSpinner(duration) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        this.setState({ spin: false })
-        document.body.classList.remove('no-overflow')
-        resolve()
-      }, duration)
-    })
+        this.setState({ spin: false });
+        document.body.classList.remove("no-overflow");
+        resolve();
+      }, duration);
+    });
   }
 
   render() {
     return (
-      <div id="spinner"
-        className={`spinner-container ${this.state.spin ? 'show' : ''}`}>
+      <div
+        id="spinner"
+        className={`spinner-container ${this.state.spin ? "show" : ""}`}
+      >
         <div className="spinner">
           <div className="ring"></div>
           <div className="ring"></div>
           <div className="dot"></div>
         </div>
       </div>
-    )
+    );
   }
 }
 
