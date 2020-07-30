@@ -35,7 +35,7 @@ img {
   max-width: 100%;
 }
 
-.line-text h4{
+.line-text h4 {
   color: #fff;
   font-family: Poppins;
   font-size: 22px;
@@ -54,7 +54,7 @@ img {
     left: -108px;
     top: 11px;
   }
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     font-size: 14px;
     &:after {
       top: 7px;
@@ -71,7 +71,7 @@ img {
     border-radius: 20px;
     font-family: Poppins;
     font-weight: 700;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   &.white {
@@ -143,8 +143,9 @@ img {
   span {
     font-size: 15px;
 
-    &:before, &:after {
-      content: '';
+    &:before,
+    &:after {
+      content: "";
       position: absolute;
       width: 10px;
       height: 10px;
@@ -167,7 +168,7 @@ img {
 
   &:before,
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 10px;
     height: 10px;
@@ -190,10 +191,9 @@ img {
   &:hover:before,
   &:hover:after,
   &:hover span:before,
-  &:hover span:after
-  {
-    width: calc( 180px/2 );
-    height: calc( 50px/2 );
+  &:hover span:after {
+    width: calc(180px / 2);
+    height: calc(50px / 2);
   }
 
   &:focus {
@@ -205,7 +205,7 @@ img {
     &:after,
     span:before,
     span:after {
-      background-color: #FF0000;
+      background-color: #ff0000;
     }
   }
 }

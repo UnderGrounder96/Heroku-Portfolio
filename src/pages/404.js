@@ -19,7 +19,7 @@ class page404 extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

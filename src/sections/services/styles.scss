@@ -89,12 +89,12 @@
     .container {
       display: flex;
       align-items: center;
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         display: block;
       }
       .counter_component {
         text-align: center;
-        @media (max-width:991px) {
+        @media (max-width: 991px) {
           padding: 20px;
         }
         .icon {

@@ -34,7 +34,7 @@
       flex-direction: column;
       padding: 5%;
       background-color: #251170;
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         width: 100%;
       }
       .content-text {
@@ -49,7 +49,7 @@
           color: #eb83f8;
         }
       }
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         .glitch {
           font-size: 40px;
           line-height: 40px;
@@ -59,7 +59,7 @@
           font-size: 20px;
         }
       }
-      @media (max-width:1024px) {
+      @media (max-width: 1024px) {
         .glitch {
           font-size: 40px;
           line-height: 40px;
@@ -68,7 +68,7 @@
           font-size: 20px;
         }
       }
-      @media (min-width:1025px) and (max-width: 1500px) {
+      @media (min-width: 1025px) and (max-width: 1500px) {
         .glitch {
           font-size: 70px;
           line-height: 70px;
@@ -77,29 +77,37 @@
       .hover-button {
         margin-top: 20px;
       }
-      @media (max-width:991px) {
+      @media (max-width: 991px) {
         margin: auto;
       }
       .float-image {
         object-fit: cover;
         position: absolute;
         width: 50px;
-        @media (max-width:991px) {
+        @media (max-width: 991px) {
           width: 10px;
         }
         &.move-up {
-          animation: up 5s infinite  alternate;
+          animation: up 5s infinite alternate;
         }
         &.move-down {
-          animation: down 5s infinite  alternate;
+          animation: down 5s infinite alternate;
         }
         @keyframes up {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50px); }
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50px);
+          }
         }
         @keyframes down {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(50px); }
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(50px);
+          }
         }
       }
     }

@@ -5,37 +5,46 @@ import "animate.css/animate.css";
 
 class Animation_Container extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       inViewport: false,
       animation_complete: false,
       classChanged: false,
-    }
+    };
   }
 
   componentDidUpdate() {
-    if (this.state.inViewport !== this.props.inViewport &&
-      !this.state.animation_complete) {
-      this.setState({inViewport: this.props.inViewport})
-      this.changeClass()
-      this.setState({animation_complete: true})
+    if (
+      this.state.inViewport !== this.props.inViewport &&
+      !this.state.animation_complete
+    ) {
+      this.setState({ inViewport: this.props.inViewport });
+      this.changeClass();
+      this.setState({ animation_complete: true });
     }
   }
 
   changeClass() {
-    const { delay } = this.props
-    setTimeout(() => {this.setState({classChanged: true});}, delay)
+    const { delay } = this.props;
+    setTimeout(() => {
+      this.setState({ classChanged: true });
+    }, delay);
   }
 
   render() {
-    const { children, animation, id, height } = this.props
+    const { children, animation, id, height } = this.props;
     return (
-      <div className={this.state.classChanged ? `animated ${animation}` : ""}
-        id={id} style={{opacity: this.state.classChanged ? 1 : 0,
-          height: height ? height : "auto"}}>
+      <div
+        className={this.state.classChanged ? `animated ${animation}` : ""}
+        id={id}
+        style={{
+          opacity: this.state.classChanged ? 1 : 0,
+          height: height ? height : "auto",
+        }}
+      >
         {children}
       </div>
-    )
+    );
   }
 }
 

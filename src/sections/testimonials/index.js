@@ -14,17 +14,17 @@ import "./styles.scss";
 
 class Testimonials extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       show: false,
-    }
-    this.show = this.show.bind(this)
+    };
+    this.show = this.show.bind(this);
   }
 
-  static contextType = ThemeContext
+  static contextType = ThemeContext;
 
   show() {
-    this.setState({ show: true })
+    this.setState({ show: true });
   }
 
   render() {
@@ -38,9 +38,9 @@ class Testimonials extends React.Component {
           className="top"
           style={{
             maxHeight:
-              this.context.height !== 'auto'
+              this.context.height !== "auto"
                 ? this.context.height * 0.8
-                : 'inherit',
+                : "inherit",
           }}
         >
           <div className="content">
@@ -61,9 +61,9 @@ class Testimonials extends React.Component {
                 className="testimonials_container"
                 style={{
                   minHeight:
-                    this.context.height !== 'auto'
+                    this.context.height !== "auto"
                       ? this.context.height * 0.6
-                      : 'auto',
+                      : "auto",
                 }}
               >
                 <Container>
@@ -76,21 +76,24 @@ class Testimonials extends React.Component {
         </Row>
         <Row className="bottom">{this.clients()}</Row>
       </section>
-    )
+    );
   }
 
   clients() {
-    if (this.state.show || this.context.height === 'auto') {
+    if (this.state.show || this.context.height === "auto") {
       return this.props.clients.edges.map((value, index) => {
         return (
           <Col md={2} className="client" key={index}>
             <AnimationContainer delay={100} animation="fadeIn slower">
-              <img src={value.node.childImageSharp.fluid.src}
-                loading="lazy" alt="client" />
+              <img
+                src={value.node.childImageSharp.fluid.src}
+                loading="lazy"
+                alt="client"
+              />
             </AnimationContainer>
           </Col>
-        )
-      })
+        );
+      });
     }
   }
 
@@ -106,18 +109,18 @@ class Testimonials extends React.Component {
       autoplay: true,
       autoplaySpeed: 10000,
       loop: true,
-    }
+    };
     if (this.state.show) {
       return (
         <AnimationContainer delay={100} animation="fadeIn slow">
           <Slider {...settings}>{this.testimonial_items()}</Slider>
         </AnimationContainer>
-      )
+      );
     }
   }
 
   testimonial_items() {
-    if (this.state.show || this.context.height === 'auto') {
+    if (this.state.show || this.context.height === "auto") {
       return this.props.testimonials.edges.map((value, index) => {
         return (
           <div className="testimonial" key={index}>
@@ -146,8 +149,8 @@ class Testimonials extends React.Component {
               </div>
             </div>
           </div>
-        )
-      })
+        );
+      });
     }
   }
 
@@ -159,50 +162,59 @@ class Testimonials extends React.Component {
             <FontAwesomeIcon icon={faQuoteLeft} />
           </AnimationContainer>
         </div>
-      )
+      );
     }
   }
 }
 
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
-          query {
-            clients: allFile(filter: {extension: {regex: "/(png)/"}, relativeDirectory: {eq: "clients"}}) {
-              edges {
-                node {
+      query {
+        clients: allFile(
+          filter: {
+            extension: { regex: "/(png)/" }
+            relativeDirectory: { eq: "clients" }
+          }
+        ) {
+          edges {
+            node {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  src
+                }
+              }
+            }
+          }
+        }
+        testimonials: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/(testimonials)/" } }
+          sort: { fields: [frontmatter___id], order: ASC }
+          limit: 8
+        ) {
+          edges {
+            content: node {
+              html
+              frontmatter {
+                id
+                name
+                profession
+                heading
+                image {
                   childImageSharp {
-                    fluid(maxWidth: 500) {
+                    fluid(maxWidth: 200, maxHeight: 200) {
                       src
                     }
                   }
                 }
               }
             }
-            testimonials: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(testimonials)/"}}, sort: {fields: [frontmatter___id], order: ASC}, limit: 8) {
-                edges {
-                  content: node {
-                    html
-                    frontmatter {
-                      id
-                      name
-                      profession
-                      heading
-                      image {
-                        childImageSharp {
-                          fluid(maxWidth: 200, maxHeight: 200) {
-                            src
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
           }
-        `}
+        }
+      }
+    `}
     render={({ clients, testimonials }) => (
       <Testimonials clients={clients} testimonials={testimonials} {...props} />
     )}
   />
-)
+);
