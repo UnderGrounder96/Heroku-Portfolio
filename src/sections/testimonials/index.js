@@ -1,30 +1,30 @@
-import React from "react";
-import Slider from "react-slick";
-import { graphql, StaticQuery } from "gatsby";
-import { Row, Col, Container } from "react-bootstrap";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react"
+import Slider from "react-slick"
+import { graphql, StaticQuery } from "gatsby"
+import { Row, Col, Container } from "react-bootstrap"
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import ThemeContext from "../../context";
-import BaffleText from "components/baffle-text";
-import AnimationContainer from "components/animation-container";
+import ThemeContext from "../../context"
+import BaffleText from "components/baffle-text"
+import AnimationContainer from "components/animation-container"
 
-import "slick-carousel/slick/slick-theme.css";
-import "./styles.scss";
+import "slick-carousel/slick/slick-theme.css"
+import "./styles.scss"
 
 class Testimonials extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       show: false,
-    };
-    this.show = this.show.bind(this);
+    }
+    this.show = this.show.bind(this)
   }
 
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   show() {
-    this.setState({ show: true });
+    this.setState({ show: true })
   }
 
   render() {
@@ -76,7 +76,7 @@ class Testimonials extends React.Component {
         </Row>
         <Row className="bottom">{this.clients()}</Row>
       </section>
-    );
+    )
   }
 
   clients() {
@@ -92,8 +92,8 @@ class Testimonials extends React.Component {
               />
             </AnimationContainer>
           </Col>
-        );
-      });
+        )
+      })
     }
   }
 
@@ -109,13 +109,13 @@ class Testimonials extends React.Component {
       autoplay: true,
       autoplaySpeed: 10000,
       loop: true,
-    };
+    }
     if (this.state.show) {
       return (
         <AnimationContainer delay={100} animation="fadeIn slow">
           <Slider {...settings}>{this.testimonial_items()}</Slider>
         </AnimationContainer>
-      );
+      )
     }
   }
 
@@ -149,8 +149,8 @@ class Testimonials extends React.Component {
               </div>
             </div>
           </div>
-        );
-      });
+        )
+      })
     }
   }
 
@@ -162,12 +162,12 @@ class Testimonials extends React.Component {
             <FontAwesomeIcon icon={faQuoteLeft} />
           </AnimationContainer>
         </div>
-      );
+      )
     }
   }
 }
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -217,4 +217,4 @@ export default (props) => (
       <Testimonials clients={clients} testimonials={testimonials} {...props} />
     )}
   />
-);
+)

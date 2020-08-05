@@ -1,56 +1,56 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+import React from "react"
+import ReactDOM from "react-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons"
 
-import "./styles.scss";
+import "./styles.scss"
 
-const scrollToElement = require("scroll-to-element");
+const scrollToElement = require("scroll-to-element")
 
 class Navigation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       show: false,
-    };
+    }
     this.sections = [
       { name: "Home" },
       { name: "About" },
       { name: "Services" },
       { name: "Portfolio" },
       { name: "Contact" },
-    ];
+    ]
   }
 
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside, true);
+    document.addEventListener("mousedown", this.handleClickOutside, true)
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside, true);
+    document.removeEventListener("mousedown", this.handleClickOutside, true)
   }
 
-  handleClickOutside = (event) => {
-    const domNode = ReactDOM.findDOMNode(this);
+  handleClickOutside = event => {
+    const domNode = ReactDOM.findDOMNode(this)
 
     if (!domNode || !domNode.contains(event.target)) {
       this.setState({
         show: false,
-      });
+      })
     }
-  };
+  }
 
   navScroll(id, v) {
-    this.setState({ show: false });
-    const el = document.getElementById(id);
+    this.setState({ show: false })
+    const el = document.getElementById(id)
 
     scrollToElement(el, {
       offset: 0,
       ease: "in-out-expo",
       duration: 3600,
     }).on("end", () => {
-      this.props.change(v);
-    });
+      this.props.change(v)
+    })
   }
 
   items() {
@@ -63,8 +63,8 @@ class Navigation extends React.Component {
             {value.name}
           </button>
         </li>
-      );
-    });
+      )
+    })
   }
 
   render() {
@@ -92,8 +92,8 @@ class Navigation extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Navigation;
+export default Navigation

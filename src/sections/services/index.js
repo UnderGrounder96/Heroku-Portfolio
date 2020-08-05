@@ -1,7 +1,7 @@
-import React from "react";
-import { Row, Col, Container } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faPython, faJava } from "@fortawesome/free-brands-svg-icons";
+import React from "react"
+import { Row, Col, Container } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faReact, faPython, faJava } from "@fortawesome/free-brands-svg-icons"
 import {
   faPencilRuler,
   faServer,
@@ -10,28 +10,28 @@ import {
   faPizzaSlice,
   faQuoteRight,
   faCode,
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons"
 
-import ThemeContext from "../../context";
-import Counter from "components/counter";
-import BaffleText from "components/baffle-text";
-import AnimationContainer from "components/animation-container";
+import ThemeContext from "../../context"
+import Counter from "components/counter"
+import BaffleText from "components/baffle-text"
+import AnimationContainer from "components/animation-container"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Services extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       show: false,
-    };
-    this.show = this.show.bind(this);
+    }
+    this.show = this.show.bind(this)
   }
 
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   show() {
-    this.setState({ show: true });
+    this.setState({ show: true })
   }
 
   render() {
@@ -80,7 +80,7 @@ class Services extends React.Component {
         </Row>
         <Row className="bottom">{this.counters()}</Row>
       </section>
-    );
+    )
   }
 
   services() {
@@ -178,7 +178,7 @@ class Services extends React.Component {
             </AnimationContainer>
           </Col>
         </Row>
-      );
+      )
     }
   }
 
@@ -231,9 +231,9 @@ class Services extends React.Component {
             </AnimationContainer>
           </Col>
         </Container>
-      );
+      )
     }
   }
 }
 
-export default Services;
+export default Services

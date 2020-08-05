@@ -1,21 +1,21 @@
-import React from "react";
-import Particles from "react-particles-js";
-import { Row, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react"
+import Particles from "react-particles-js"
+import { Row, Col } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithubSquare,
   faLinkedin,
   faTwitterSquare,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+} from "@fortawesome/free-brands-svg-icons"
 
-import ThemeContext from "../../context";
-import Progress from "components/progress";
+import ThemeContext from "../../context"
+import Progress from "components/progress"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Hero extends React.Component {
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   render() {
     return (
@@ -89,7 +89,7 @@ class Hero extends React.Component {
           </Col>
         </Row>
       </section>
-    );
+    )
   }
 
   particles() {
@@ -116,8 +116,8 @@ class Hero extends React.Component {
           retina_detect: true,
         }}
       />
-    );
+    )
   }
 }
 
-export default Hero;
+export default Hero

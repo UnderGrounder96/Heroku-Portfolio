@@ -1,32 +1,32 @@
-import React from "react";
+import React from "react"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Spinner extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       spin: true,
-    };
+    }
   }
 
   componentDidMount() {
-    const { duration } = this.props;
+    const { duration } = this.props
     this.showSpinner(duration).then(() => {
       setTimeout(() => {
-        document.getElementById("spinner").remove();
-      }, 500);
-    });
+        document.getElementById("spinner").remove()
+      }, 500)
+    })
   }
 
   showSpinner(duration) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        this.setState({ spin: false });
-        document.body.classList.remove("no-overflow");
-        resolve();
-      }, duration);
-    });
+        this.setState({ spin: false })
+        document.body.classList.remove("no-overflow")
+        resolve()
+      }, duration)
+    })
   }
 
   render() {
@@ -41,8 +41,8 @@ class Spinner extends React.Component {
           <div className="dot"></div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Spinner;
+export default Spinner
