@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "gatsby";
-import Helmet from "react-helmet";
+import React from "react"
+import { Link } from "gatsby"
+import Helmet from "react-helmet"
 
-import "scss/retro.scss";
+import "scss/retro.scss"
 
 class page404 extends React.Component {
   render() {
@@ -19,8 +19,8 @@ class page404 extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default page404;
+export default page404

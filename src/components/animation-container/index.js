@@ -1,16 +1,16 @@
-import React from "react";
-import handleViewport from "react-in-viewport";
+import React from "react"
+import handleViewport from "react-in-viewport"
 
-import "animate.css/animate.css";
+import "animate.css/animate.css"
 
 class Animation_Container extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       inViewport: false,
       animation_complete: false,
       classChanged: false,
-    };
+    }
   }
 
   componentDidUpdate() {
@@ -18,21 +18,21 @@ class Animation_Container extends React.Component {
       this.state.inViewport !== this.props.inViewport &&
       !this.state.animation_complete
     ) {
-      this.setState({ inViewport: this.props.inViewport });
-      this.changeClass();
-      this.setState({ animation_complete: true });
+      this.setState({ inViewport: this.props.inViewport })
+      this.changeClass()
+      this.setState({ animation_complete: true })
     }
   }
 
   changeClass() {
-    const { delay } = this.props;
+    const { delay } = this.props
     setTimeout(() => {
-      this.setState({ classChanged: true });
-    }, delay);
+      this.setState({ classChanged: true })
+    }, delay)
   }
 
   render() {
-    const { children, animation, id, height } = this.props;
+    const { children, animation, id, height } = this.props
     return (
       <div
         className={this.state.classChanged ? `animated ${animation}` : ""}
@@ -44,10 +44,10 @@ class Animation_Container extends React.Component {
       >
         {children}
       </div>
-    );
+    )
   }
 }
 
-const AnimationContainer = handleViewport(Animation_Container);
+const AnimationContainer = handleViewport(Animation_Container)
 
-export default AnimationContainer;
+export default AnimationContainer

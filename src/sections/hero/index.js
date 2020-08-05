@@ -1,15 +1,15 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
-import Typewriter from "typewriter-effect";
-import { StaticQuery, graphql } from "gatsby";
+import React from "react"
+import { Row, Col } from "react-bootstrap"
+import Typewriter from "typewriter-effect"
+import { StaticQuery, graphql } from "gatsby"
 
-import Glitch from "components/glitch";
-import ThemeContext from "../../context";
+import Glitch from "components/glitch"
+import ThemeContext from "../../context"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Hero extends React.Component {
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   render() {
     return (
@@ -57,7 +57,7 @@ class Hero extends React.Component {
           </Col>
         </Row>
       </section>
-    );
+    )
   }
 
   icons() {
@@ -79,12 +79,12 @@ class Hero extends React.Component {
           alt="shape"
           key={index}
         />
-      );
-    });
+      )
+    })
   }
 }
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -115,4 +115,4 @@ export default (props) => (
     `}
     render={({ icons, Img }) => <Hero icons={icons} mainImg={Img} {...props} />}
   />
-);
+)

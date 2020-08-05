@@ -1,20 +1,20 @@
-import React from "react";
-import Tilt from "react-tilt";
-import { Row, Col } from "react-bootstrap";
-import { StaticQuery, graphql } from "gatsby";
+import React from "react"
+import Tilt from "react-tilt"
+import { Row, Col } from "react-bootstrap"
+import { StaticQuery, graphql } from "gatsby"
 
-import ThemeContext from "../../context";
-import BaffleText from "components/baffle-text";
-import AnimationContainer from "components/animation-container";
+import ThemeContext from "../../context"
+import BaffleText from "components/baffle-text"
+import AnimationContainer from "components/animation-container"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Portfolio extends React.Component {
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   constructor(props) {
-    super(props);
-    const { items } = this.props;
+    super(props)
+    const { items } = this.props
     this.state = {
       category: null,
       col:
@@ -29,12 +29,12 @@ class Portfolio extends React.Component {
           : 1,
       items: this.props.items,
       showPortfolio: false,
-    };
-    this.showPortfolio = this.showPortfolio.bind(this);
+    }
+    this.showPortfolio = this.showPortfolio.bind(this)
   }
 
   showPortfolio() {
-    this.setState({ showPortfolio: true });
+    this.setState({ showPortfolio: true })
   }
 
   render() {
@@ -85,12 +85,12 @@ class Portfolio extends React.Component {
           </Col>
         </Row>
       </section>
-    );
+    )
   }
 
   items() {
     if (this.state.showPortfolio || this.context.height === "auto") {
-      const { items } = this.state;
+      const { items } = this.state
       return items.map((value, index) => {
         if (
           value.content.frontmatter.category === this.state.category ||
@@ -144,44 +144,44 @@ class Portfolio extends React.Component {
                   </Tilt>
                 </AnimationContainer>
               </div>
-            );
+            )
           }
         }
-        return false;
-      });
+        return false
+      })
     }
   }
 
   getItemCount(category) {
-    let total = 0;
-    this.state.items.forEach((v) => {
-      if (v.content.frontmatter.category === category || !category) total++;
-    });
-    return total;
+    let total = 0
+    this.state.items.forEach(v => {
+      if (v.content.frontmatter.category === category || !category) total++
+    })
+    return total
   }
 
   changeCategory(category) {
-    const { items } = this.props;
-    this.setState({ items: [] });
-    let total = 0;
-    items.forEach((v) => {
-      if (v.content.frontmatter.category === category || !category) total++;
-    });
-    let col = total > 6 ? 4 : total > 4 ? 3 : total > 3 ? 2 : total > 1 ? 2 : 1;
+    const { items } = this.props
+    this.setState({ items: [] })
+    let total = 0
+    items.forEach(v => {
+      if (v.content.frontmatter.category === category || !category) total++
+    })
+    let col = total > 6 ? 4 : total > 4 ? 3 : total > 3 ? 2 : total > 1 ? 2 : 1
 
-    this.setState({ category: category, col: col });
+    this.setState({ category: category, col: col })
     setTimeout(() => {
-      this.setState({ items: items });
-    }, 50);
+      this.setState({ items: items })
+    }, 50)
   }
 
   categories() {
-    const { items } = this.props;
-    let categories = [];
+    const { items } = this.props
+    let categories = []
     for (var v of items) {
-      categories.push(v.content.frontmatter.category);
+      categories.push(v.content.frontmatter.category)
     }
-    categories = [...new Set(categories)];
+    categories = [...new Set(categories)]
     return categories.map((value, index) => {
       return (
         <button
@@ -193,12 +193,12 @@ class Portfolio extends React.Component {
             {value}
           </span>
         </button>
-      );
-    });
+      )
+    })
   }
 }
 
-export default (props) => (
+export default props => (
   <StaticQuery
     query={graphql`
       query {
@@ -232,4 +232,4 @@ export default (props) => (
     `}
     render={({ items }) => <Portfolio items={items.edges} {...props} />}
   />
-);
+)

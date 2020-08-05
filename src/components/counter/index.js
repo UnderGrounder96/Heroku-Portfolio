@@ -1,15 +1,15 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import CountUp from "react-countup";
-import handleViewport from "react-in-viewport";
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import CountUp from "react-countup"
+import handleViewport from "react-in-viewport"
 
 class Counter_Component extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       inViewport: false,
       animation_complete: false,
-    };
+    }
   }
 
   componentDidUpdate() {
@@ -17,14 +17,14 @@ class Counter_Component extends React.Component {
       this.state.inViewport !== this.props.inViewport &&
       !this.state.animation_complete
     ) {
-      this.setState({ inViewport: this.props.inViewport });
-      this.setState({ animation_complete: true });
-      this.setState({ value: this.props.state });
+      this.setState({ inViewport: this.props.inViewport })
+      this.setState({ animation_complete: true })
+      this.setState({ value: this.props.state })
     }
   }
 
   render() {
-    const { icon, text, value, symbol } = this.props;
+    const { icon, text, value, symbol } = this.props
     return (
       <div className="counter_component">
         <div className="icon">
@@ -40,10 +40,10 @@ class Counter_Component extends React.Component {
         </div>
         <div className="text">{text}</div>
       </div>
-    );
+    )
   }
 }
 
-const Counter = handleViewport(Counter_Component);
+const Counter = handleViewport(Counter_Component)
 
-export default Counter;
+export default Counter

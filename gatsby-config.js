@@ -1,6 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 
 module.exports = {
   siteMetadata: {
@@ -67,4 +67,4 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
   ],
-};
+}

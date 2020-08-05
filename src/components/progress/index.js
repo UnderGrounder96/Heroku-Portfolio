@@ -1,17 +1,17 @@
-import React from "react";
-import handleViewport from "react-in-viewport";
-import CountUp from "react-countup";
+import React from "react"
+import handleViewport from "react-in-viewport"
+import CountUp from "react-countup"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Progress_Animation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       value: 0,
       inViewport: false,
       animation_complete: false,
-    };
+    }
   }
 
   componentDidUpdate() {
@@ -19,20 +19,20 @@ class Progress_Animation extends React.Component {
       this.state.inViewport !== this.props.inViewport &&
       !this.state.animation_complete
     ) {
-      this.setState({ inViewport: this.props.inViewport });
-      this.setState({ animation_complete: true });
-      this.showProgress();
+      this.setState({ inViewport: this.props.inViewport })
+      this.setState({ animation_complete: true })
+      this.showProgress()
     }
   }
 
   showProgress() {
     setTimeout(() => {
-      this.setState({ value: this.props.value });
-    }, this.props.delay);
+      this.setState({ value: this.props.value })
+    }, this.props.delay)
   }
 
   render() {
-    const { name } = this.props;
+    const { name } = this.props
     return (
       <div className="progress-container">
         <span className="name">{name}</span>
@@ -48,9 +48,9 @@ class Progress_Animation extends React.Component {
           style={{ width: `${this.state.value}%` }}
         ></div>
       </div>
-    );
+    )
   }
 }
-const Progress = handleViewport(Progress_Animation);
+const Progress = handleViewport(Progress_Animation)
 
-export default Progress;
+export default Progress

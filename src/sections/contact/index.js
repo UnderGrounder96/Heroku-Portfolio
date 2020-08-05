@@ -1,24 +1,24 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react"
+import { Row, Col } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithubSquare,
   faLinkedin,
   faTwitterSquare,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+} from "@fortawesome/free-brands-svg-icons"
 
-import ThemeContext from "../../context";
-import BaffleText from "components/baffle-text";
-import AnimationContainer from "components/animation-container";
+import ThemeContext from "../../context"
+import BaffleText from "components/baffle-text"
+import AnimationContainer from "components/animation-container"
 
-import "./styles.scss";
+import "./styles.scss"
 
 class Contact extends React.Component {
-  static contextType = ThemeContext;
+  static contextType = ThemeContext
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       name: "Lucio Afonso",
       email: "lucioafonso@icloud.com",
@@ -26,12 +26,12 @@ class Contact extends React.Component {
       message:
         "I'm always open for contact. Feel free to ask about past work, future opportunities or just chatting.",
       show: false,
-    };
-    this.show = this.show.bind(this);
+    }
+    this.show = this.show.bind(this)
   }
 
   show() {
-    this.setState({ show: true });
+    this.setState({ show: true })
   }
 
   render() {
@@ -98,8 +98,8 @@ class Contact extends React.Component {
           </Col>
         </Row>
       </section>
-    );
+    )
   }
 }
 
-export default Contact;
+export default Contact

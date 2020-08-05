@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 class HTML extends React.Component {
   render() {
@@ -21,8 +21,8 @@ class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    );
+    )
   }
 }
 
-export default HTML;
+export default HTML
