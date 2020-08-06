@@ -85,7 +85,7 @@ class Navigation extends React.Component {
             onClick={() => this.setState({ show: false })}
           />
           <div className="logo">
-            <img src="img/logo.png" loading="lazy" alt="logo" />
+            <img src="logo.png" loading="lazy" alt="logo" />
           </div>
           <div className="links">
             <ul>{this.items()}</ul>

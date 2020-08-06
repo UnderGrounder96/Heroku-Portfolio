@@ -10,10 +10,10 @@
   "repository": "github:UnderGrounder96/Portfolio",
   "scripts": {
     "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "start": "gatsby serve"
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.14.0",

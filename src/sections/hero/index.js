@@ -77,6 +77,7 @@ class Hero extends React.Component {
             }%`,
           }}
           alt="shape"
+          loading="lazy"
           key={index}
         />
       )
