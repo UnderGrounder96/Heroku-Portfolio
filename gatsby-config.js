@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/images/`,
+        path: `${__dirname}/static/images/`,
         name: "images",
       },
     },
@@ -35,14 +35,14 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/portfolio/`,
+        path: `${__dirname}/src/content/portfolio/`,
         name: "portfolio",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/content/testimonials/`,
+        path: `${__dirname}/src/content/testimonials/`,
         name: "testimonials",
       },
     },
