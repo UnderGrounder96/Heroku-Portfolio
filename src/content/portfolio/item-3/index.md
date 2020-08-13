@@ -1,8 +1,8 @@
 ---
-id: 3
-image: "./image.jpg"
-title: "Database Simulation"
-category: "Script programming"
-description: "This Python program simulates a MySQL database server."
-homepage: "https://github.com/UnderGrounder96/Database-Simulation"
+id: 4
+image: "./GatsbyBlog.png"
+title: "Weather App"
+category: "Coming soon"
+description: "(WIP) Weather App"
+homepage: "https://my-gatsby-blog-2020.netlify.app/"
 ---

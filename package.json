@@ -11,9 +11,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "start": "gatsby serve",
     "clean": "gatsby clean",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby serve"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.14.0",

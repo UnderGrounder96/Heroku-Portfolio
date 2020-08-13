@@ -5,6 +5,8 @@ Currently live at: https://lucio-afonso-portfolio.herokuapp.com/ <br />
 
 **Tech used**: ReactJS, GatsbyJS, graphql, scss...
 
+![Portfolio image](Portfolio.png)
+
 ## Getting Started
 
 This program was created under Windows 10 (x64) Operative System using ReactJS 16.13.1, <br />

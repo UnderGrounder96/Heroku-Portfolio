@@ -1,6 +1,6 @@
 ---
 id: 1
-image: "./image.jpg"
+image: "./rentAcar.png"
 title: "Rent a car"
 category: "Web development"
 description: "This NodeJS program simulates a car rental."

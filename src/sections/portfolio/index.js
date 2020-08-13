@@ -206,7 +206,7 @@ export default props => (
           filter: { fileAbsolutePath: { regex: "/(portfolio)/" } }
           sort: { fields: [frontmatter___id], order: ASC }
           # The layout is built for 6 portfolio items #
-          limit: 5
+          limit: 6
         ) {
           edges {
             content: node {

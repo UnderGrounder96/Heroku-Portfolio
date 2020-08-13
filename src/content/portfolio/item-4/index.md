@@ -1,8 +1,8 @@
 ---
 id: 4
-image: "./image.jpg"
+image: "./TwitterDjango.png"
 title: "Twitter_Django"
 category: "Script programming"
 description: "(WIP) Twitter in Django."
-homepage: "https://github.com/UnderGrounder96/Twitter_Django"
+homepage: "https://twitter-django-app.herokuapp.com/"
 ---
