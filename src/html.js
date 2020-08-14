@@ -10,7 +10,7 @@ class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          <link rel="shortcut icon" href="/img/icon.ico" />
+          <link rel="shortcut icon" href="/logo.png" />
         </head>
 
         <body style={{ padding: "0px !important" }} className="no-overflow">
