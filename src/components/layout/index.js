@@ -5,7 +5,7 @@ import { ThemeProvider } from "../../context"
 import Navigation from "components/navigation"
 
 import "bootstrap/dist/css/bootstrap.min.css"
-import "scss/retro.scss"
+import "scss/styles.scss"
 
 var scrollToElement = require("scroll-to-element")
 

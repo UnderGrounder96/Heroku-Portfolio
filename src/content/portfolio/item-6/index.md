@@ -1,8 +1,8 @@
 ---
 id: 6
-image: "./image.jpg"
-title: "Coming soon"
+image: "./image.png"
+title: "Weather App"
 category: "Coming soon"
-description: "Coming soon"
+description: "(WIP) Weather App"
 homepage: "https://github.com/UnderGrounder96/"
 ---
