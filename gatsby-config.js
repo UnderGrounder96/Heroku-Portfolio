@@ -5,7 +5,7 @@ require(`dotenv`).config({
 module.exports = {
   siteMetadata: {
     title: `Portfolio | Lucio Afonso`,
-    athor: `Lucio Afonso`,
+    author: `Lucio Afonso`,
     description: `Portfolio built using React and Gatsby`,
     social: [
       {
