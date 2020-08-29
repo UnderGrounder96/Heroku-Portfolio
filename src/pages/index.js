@@ -18,6 +18,7 @@ class HomePage extends React.Component {
       <div>
         <Helmet>
           <title>{site.meta.title}</title>
+          <meta name="author" content={site.meta.author} />
           <meta name="description" content={site.meta.description} />
         </Helmet>
         <Layout>
@@ -40,6 +41,7 @@ export const pageQuery = graphql`
     site {
       meta: siteMetadata {
         title
+        author
         description
       }
     }
