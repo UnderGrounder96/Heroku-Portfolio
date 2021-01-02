@@ -1,6 +1,5 @@
 # Portfolio
 
-This is my updated portfolio. <br />
 Currently live at: https://lucio-afonso-portfolio.herokuapp.com/ <br />
 
 **Tech used**: ReactJS, GatsbyJS, graphql, scss...
